@@ -1,0 +1,47 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defense Mode - Hash Cracking Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🛡️ Password Hashing & Strength Checker</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/attack">Attack</a>
+        <a href="/defense">Defense</a>
+    </nav>
+
+    <div class="container">
+        <form method="POST">
+            <label for="password">Enter Password:</label>
+            <input type="text" id="password" name="password" required><br><br>
+
+            <label for="method">Choose Hash Method:</label>
+            <select name="method" id="method" required>
+                <option value="sha256">SHA-256</option>
+                <option value="bcrypt">bcrypt</option>
+            </select><br><br>
+
+            <button type="submit">Hash Password</button>
+        </form>
+
+        {% if strength %}
+            <div class="results">
+                <p>🔋 Strength: <strong>{{ strength }}</strong></p>
+                <p>🔑 Hashed Password: <code>{{ hashed }}</code></p>
+            </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p><a href="/">⬅️ Back to Home</a></p>
+        &copy; 2025 Hash Cracking Tool. All rights reserved.
+    </footer>
+</body>
+</html>

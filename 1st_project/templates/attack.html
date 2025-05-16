@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attack Mode</title>
+</head>
+<body>
+    <h2>💣 Password Cracker</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Enter Target Hash:</label>
+        <input type="text" name="target_hash" required><br><br>
+
+        <label>Upload Wordlist (.txt):</label>
+        <input type="file" name="wordlist" required><br><br>
+
+        <label>Choose Cracking Method:</label>
+        <select name="method">
+            <option value="hybrid">Hybrid</option>
+            <option value="rainbow">Rainbow Table</option>
+        </select><br><br>
+
+        <button type="submit">Start Cracking</button>
+    </form>
+
+    {% if result %}
+        <p>🔍 Result: <strong>{{ result }}</strong></p>
+    {% endif %}
+
+    <p><a href="/">⬅️ Back to Home</a></p>
+</body>
+</html>
