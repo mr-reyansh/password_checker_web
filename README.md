@@ -84,9 +84,6 @@ project/
 
 ---
 
-## 📸 Screenshots
-
-> _You can add screenshots here for the UI. Eg:_
 - Defense page showing hashed password & strength
 - Attack page with cracking results
 
